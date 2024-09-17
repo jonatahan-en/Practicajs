@@ -1,15 +1,10 @@
 /*
 Crea una función para que con estos datos de entrada se produzca los siguientes
 */
-
-
-
 const input1 = 'string';
-
 const longReverse = (item) => {
     const characteres = item.length;
-    const newlist = [...item];
-    const invest = newlist.reverse();
+    const newlist = [...item];invest = newlist.reverse();
     return(`Resultado ejrcicio 3.3: ${characteres}  ${invest.join('')}`)
 }
 console.log(longReverse(input1)); // '6 gnirts'
