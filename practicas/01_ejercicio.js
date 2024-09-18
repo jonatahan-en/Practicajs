@@ -16,7 +16,7 @@ const usuario = {
     temasBootcamps:{
         nodeJs: '2024-10-21',
         git: '2025-01-29',
-        react: '2024-12-17'
+        react: '2024-12-16'
     },
     busquedaActiva:{
         activa:true,
