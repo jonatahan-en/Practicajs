@@ -25,27 +25,38 @@ const musicCatalog = () => {
 
     /**
      * Adds a new playlist to the catalog.
-     * @param {string} playlistName - The name of the new playlist.
+     * Añadir una nueva lista de reproducción al catalogo
+     * @param {string} playlistName - The name of the new playlist.El nombre de la nueva lista
      */
-    const createPlaylist = (playlistName) => {};
+    const createPlaylist = (playlistName) => {
+        const newPlayList = { 
+            name: playlistName,
+            songs:[]
+        }
+    };
 
     /**
-     * Gets all playlists in the catalog.
-     * @returns {Playlist[]} The list of all playlists.
+     * Gets all playlists in the catalog.obtiene todas las listas de reproduccion en el catalogo
+     * eliminar una lista del catalogo
+     * @returns {Playlist[]} The list of all playlists.la lista de todas las listas de reproduccion
      */
-    const getAllPlaylists = () => {};
+    const getAllPlaylists = () => {
+        return playlists
+    };
 
     /**
      * Removes a playlist from the catalog.
-     * @param {string} playlistName - The name of the playlist to remove.
+     * //@param {string} playlistName - The name of the playlist to remove.
      */
     const removePlaylist = (playlistName) => {};
 
     /**
      * Adds a song to a specific playlist.
+     * Añadir una canción a una lista de reproducción especifica
      * @param {string} playlistName - The name of the playlist to add the song to.
-     * @param {{ title: string, artist: string, genre: string, duration: number }} song - The song to add to the playlist.
-     * @throws {Error} If the playlist is not found.
+     * El nombre de la playList a la que se agragará la canción
+     * @param {{ title: string, artist: string, genre: string, duration: number }} song - The song to add to the playlist.La canción para agregar a la playList
+     * @throws {Error} If the playlist is not found.//Si no se encuentra la playList
      */
     const addSongToPlaylist = (playlistName, song) => {};
 
