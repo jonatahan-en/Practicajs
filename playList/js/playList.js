@@ -46,9 +46,14 @@ const musicCatalog = () => {
 
     /**
      * Removes a playlist from the catalog.
-     * //@param {string} playlistName - The name of the playlist to remove.
+     * @param {string} playlistName - The name of the playlist to remove.
      */
-    const removePlaylist = (playlistName) => {};
+    const removePlaylist = (playlistName) =>{
+        playlists = playlists.filter(Playlist =>{
+            if(Playlist.name === playlistName) return false;
+            return true
+        });
+    };
 
     /**
      * Adds a song to a specific playlist.
