@@ -21,7 +21,11 @@ const musicCatalog = () => {
      * Array of playlists in the catalog.
      * @type {Playlist[]}
      */
-    let playlists = [];
+    let playlists = []
+
+        
+
+    
 
     /**
      * Adds a new playlist to the catalog.
@@ -29,10 +33,12 @@ const musicCatalog = () => {
      * @param {string} playlistName - The name of the new playlist.El nombre de la nueva lista
      */
     const createPlaylist = (playlistName) => {
-        const newPlayList = { 
+        const newPlaylist = { 
             name: playlistName,
             songs:[]
         }
+        playlists = [...playlists, newPlaylist]
+
     };
 
     /**
@@ -49,8 +55,9 @@ const musicCatalog = () => {
      * @param {string} playlistName - The name of the playlist to remove.
      */
     const removePlaylist = (playlistName) =>{
+       // playlists = playlists.filter(playlist => playlist.name !== playlistName)
         playlists = playlists.filter(Playlist =>{
-            if(Playlist.name === playlistName) return false;
+            if(Playlist.name !== playlistName) return false;
             return true
         });
     };
@@ -62,8 +69,23 @@ const musicCatalog = () => {
      * El nombre de la playList a la que se agragará la canción
      * @param {{ title: string, artist: string, genre: string, duration: number }} song - The song to add to the playlist.La canción para agregar a la playList
      * @throws {Error} If the playlist is not found.//Si no se encuentra la playList
+     * buscar producto OK
+     * lanzar error si no lo tenemos OK
+     * guardar la nueva cancion con su nombre
+     * 
      */
-    const addSongToPlaylist = (playlistName, song) => {};
+    const addSongToPlaylist = (playlistName, song) => {
+        const playlist = playlists.find(playlist => playlist.name === playlistName);
+        if (!playlist) throw new Error('Playlist not found')
+        const songList = {...playlist,songs:[...playlist.songs,song]
+    };
+        
+        playlists = playlists.map(playlist => 
+            playlist.name === playlistName ? songList:playlist
+    
+        );
+    };
+
 
     /**
      * Removes a song from a specific playlist.
