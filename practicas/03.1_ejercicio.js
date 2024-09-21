@@ -11,8 +11,11 @@ const input1 = [
 ]
 
 const getInput = (list) => {
-    const getElemet = list.length -1;extension = list[getElemet]; newList = [...list];newList.pop();
-    return (`Resultado ejercicio 3.1: ${newList.join('/')}.${extension}`)
+    const getElemet = list.length -1;
+    const extension = list[getElemet];
+    const newList = [...list];
+    newList.pop();
+    return (`${newList.join('/')}.${extension}`)
 };
 
 console.log(getInput(input1)); // 'Downloads/Videos/capture.mp4'

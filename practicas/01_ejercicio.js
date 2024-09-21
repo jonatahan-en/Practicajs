@@ -13,15 +13,26 @@ objeto que hemos creado anteriormente.
 const usuario = {
     nombre: 'Jonatahan',
     apellido: 'Enriquez',
-    temasBootcamps:{
-        nodeJs: '2024-10-21',
-        git: '2025-01-29',
-        react: '2024-12-16'
-    },
-    busquedaActiva:{
-        activa:true,
-        noActva:false
-    }
+    temasBootcamps:[
+        {
+            nombre:'nodejs',
+            inicio:'2024-10-21'
+        },
+        {
+            nombre:'git',
+            inicio:'2025-10-29'
+        },
+        {
+            nombre:'react',
+            inicio:'2024-12-16'
+        }
+    ],
+    busquedaActiva:[
+        {
+            activa:true,
+            noActiva:false
+        }
+    ]
 };
-console.log(`La fecha de inicio del curso de react es:${usuario.temasBootcamps.react}`)
-console.log(`Busqueda activa: ${usuario.busquedaActiva.activa}`)
+console.log(`${usuario.temasBootcamps[2].inicio}`)
+console.log(`${usuario.busquedaActiva[0].noActiva}`)

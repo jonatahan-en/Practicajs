@@ -21,7 +21,7 @@ const musicCatalog = () => {
      * Array of playlists in the catalog.
      * @type {Playlist[]}
      */
-    let playlists = []
+    let playlists = [];
 
         
 
@@ -89,11 +89,23 @@ const musicCatalog = () => {
 
     /**
      * Removes a song from a specific playlist.
+     * Eliminar una canción de un lugar especifico
      * @param {string} playlistName - The name of the playlist to remove the song from.
+     * El nombre de la lista de reproducccion de la que se eliminara la canción 
      * @param {string} title - The title of the song to remove.
+     * El tirulo de la cancion para quitar
      * @throws {Error} If the playlist or song is not found.
+     * Si no se encuentra la lista de reproducion o cancion
+     * 1 buscar lista y cancion
+     * 2 quitar cancion por titulo
+     * 3 lanzar error 
      */
-    const removeSongFromPlaylist = (playlistName, title) => {};
+    const removeSongFromPlaylist = (playlistName, title) => {
+        const removeList =(playlists.find(playlist => playlist.name === playlistName && playlist.songs.find(song => song.title === title)))
+        if (!removeList) throw new Error("Playlist not found");
+        
+
+    };
 
     /**
      * Marks a song as a favorite or removes the favorite status.
